@@ -1,0 +1,243 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From testapp:
+* CordovaLib\
+* CordovaLib\.project
+* CordovaLib\AndroidManifest.xml
+* CordovaLib\build.xml
+* CordovaLib\local.properties
+* CordovaLib\proguard-project.txt
+* CordovaLib\project.properties
+* CordovaLib\src\
+* CordovaLib\src\com\
+* CordovaLib\src\com\squareup\
+* CordovaLib\src\com\squareup\okhttp\
+* CordovaLib\src\com\squareup\okhttp\Address.java
+* CordovaLib\src\com\squareup\okhttp\Connection.java
+* CordovaLib\src\com\squareup\okhttp\ConnectionPool.java
+* CordovaLib\src\com\squareup\okhttp\Dispatcher.java
+* CordovaLib\src\com\squareup\okhttp\Failure.java
+* CordovaLib\src\com\squareup\okhttp\HttpResponseCache.java
+* CordovaLib\src\com\squareup\okhttp\Job.java
+* CordovaLib\src\com\squareup\okhttp\MediaType.java
+* CordovaLib\src\com\squareup\okhttp\OkAuthenticator.java
+* CordovaLib\src\com\squareup\okhttp\OkHttpClient.java
+* CordovaLib\src\com\squareup\okhttp\OkResponseCache.java
+* CordovaLib\src\com\squareup\okhttp\Request.java
+* CordovaLib\src\com\squareup\okhttp\Response.java
+* CordovaLib\src\com\squareup\okhttp\ResponseSource.java
+* CordovaLib\src\com\squareup\okhttp\Route.java
+* CordovaLib\src\com\squareup\okhttp\RouteDatabase.java
+* CordovaLib\src\com\squareup\okhttp\TunnelRequest.java
+* CordovaLib\src\com\squareup\okhttp\internal\
+* CordovaLib\src\com\squareup\okhttp\internal\AbstractOutputStream.java
+* CordovaLib\src\com\squareup\okhttp\internal\Base64.java
+* CordovaLib\src\com\squareup\okhttp\internal\DiskLruCache.java
+* CordovaLib\src\com\squareup\okhttp\internal\Dns.java
+* CordovaLib\src\com\squareup\okhttp\internal\FaultRecoveringOutputStream.java
+* CordovaLib\src\com\squareup\okhttp\internal\NamedRunnable.java
+* CordovaLib\src\com\squareup\okhttp\internal\Platform.java
+* CordovaLib\src\com\squareup\okhttp\internal\StrictLineReader.java
+* CordovaLib\src\com\squareup\okhttp\internal\Util.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\
+* CordovaLib\src\com\squareup\okhttp\internal\http\AbstractHttpInputStream.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HeaderParser.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpAuthenticator.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpDate.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpEngine.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpTransport.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpURLConnectionImpl.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpsEngine.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\HttpsURLConnectionImpl.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\OkResponseCacheAdapter.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\Policy.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\RawHeaders.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\RequestHeaders.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\ResponseHeaders.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\RetryableOutputStream.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\RouteSelector.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\SpdyTransport.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\Transport.java
+* CordovaLib\src\com\squareup\okhttp\internal\http\UnknownLengthHttpInputStream.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\ErrorCode.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\FrameReader.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\FrameWriter.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\HeadersMode.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\Hpack.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\Http20Draft06.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\IncomingStreamHandler.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\NameValueBlockReader.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\Ping.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\Settings.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\Spdy3.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\SpdyConnection.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\SpdyStream.java
+* CordovaLib\src\com\squareup\okhttp\internal\spdy\Variant.java
+* CordovaLib\src\com\squareup\okhttp\internal\tls\
+* CordovaLib\src\com\squareup\okhttp\internal\tls\DistinguishedNameParser.java
+* CordovaLib\src\com\squareup\okhttp\internal\tls\OkHostnameVerifier.java
+* CordovaLib\src\org\
+* CordovaLib\src\org\apache\
+* CordovaLib\src\org\apache\cordova\
+* CordovaLib\src\org\apache\cordova\App.java
+* CordovaLib\src\org\apache\cordova\AuthenticationToken.java
+* CordovaLib\src\org\apache\cordova\CallbackContext.java
+* CordovaLib\src\org\apache\cordova\Config.java
+* CordovaLib\src\org\apache\cordova\CordovaActivity.java
+* CordovaLib\src\org\apache\cordova\CordovaArgs.java
+* CordovaLib\src\org\apache\cordova\CordovaChromeClient.java
+* CordovaLib\src\org\apache\cordova\CordovaInterface.java
+* CordovaLib\src\org\apache\cordova\CordovaPlugin.java
+* CordovaLib\src\org\apache\cordova\CordovaResourceApi.java
+* CordovaLib\src\org\apache\cordova\CordovaWebView.java
+* CordovaLib\src\org\apache\cordova\CordovaWebViewClient.java
+* CordovaLib\src\org\apache\cordova\DirectoryManager.java
+* CordovaLib\src\org\apache\cordova\DroidGap.java
+* CordovaLib\src\org\apache\cordova\ExifHelper.java
+* CordovaLib\src\org\apache\cordova\ExposedJsApi.java
+* CordovaLib\src\org\apache\cordova\FileHelper.java
+* CordovaLib\src\org\apache\cordova\IceCreamCordovaWebViewClient.java
+* CordovaLib\src\org\apache\cordova\JSONUtils.java
+* CordovaLib\src\org\apache\cordova\LOG.java
+* CordovaLib\src\org\apache\cordova\LinearLayoutSoftKeyboardDetect.java
+* CordovaLib\src\org\apache\cordova\NativeToJsMessageQueue.java
+* CordovaLib\src\org\apache\cordova\PluginEntry.java
+* CordovaLib\src\org\apache\cordova\PluginManager.java
+* CordovaLib\src\org\apache\cordova\PluginResult.java
+* CordovaLib\src\org\apache\cordova\ScrollEvent.java
+* CordovaLib\src\org\apache\cordova\Whitelist.java
+* build.xml
+* cordova\
+* cordova\android_sdk_version
+* cordova\build
+* cordova\build.bat
+* cordova\check_reqs
+* cordova\clean
+* cordova\clean.bat
+* cordova\defaults.xml
+* cordova\lib\
+* cordova\lib\android_sdk_version.js
+* cordova\lib\appinfo.js
+* cordova\lib\build.js
+* cordova\lib\check_reqs.js
+* cordova\lib\clean.js
+* cordova\lib\device.js
+* cordova\lib\emulator.js
+* cordova\lib\exec.js
+* cordova\lib\install-device
+* cordova\lib\install-device.bat
+* cordova\lib\install-emulator
+* cordova\lib\install-emulator.bat
+* cordova\lib\list-devices
+* cordova\lib\list-devices.bat
+* cordova\lib\list-emulator-images
+* cordova\lib\list-emulator-images.bat
+* cordova\lib\list-started-emulators
+* cordova\lib\list-started-emulators.bat
+* cordova\lib\log.js
+* cordova\lib\run.js
+* cordova\lib\spawn.js
+* cordova\lib\start-emulator
+* cordova\lib\start-emulator.bat
+* cordova\log
+* cordova\log.bat
+* cordova\node_modules\
+* cordova\node_modules\q\
+* cordova\node_modules\q\CONTRIBUTING.md
+* cordova\node_modules\q\LICENSE
+* cordova\node_modules\q\README.md
+* cordova\node_modules\q\benchmark\
+* cordova\node_modules\q\benchmark\compare-with-callbacks.js
+* cordova\node_modules\q\benchmark\scenarios.js
+* cordova\node_modules\q\package.json
+* cordova\node_modules\q\q.js
+* cordova\node_modules\q\queue.js
+* cordova\node_modules\shelljs\
+* cordova\node_modules\shelljs\.documentup.json
+* cordova\node_modules\shelljs\.jshintrc
+* cordova\node_modules\shelljs\.npmignore
+* cordova\node_modules\shelljs\.travis.yml
+* cordova\node_modules\shelljs\LICENSE
+* cordova\node_modules\shelljs\README.md
+* cordova\node_modules\shelljs\bin\
+* cordova\node_modules\shelljs\bin\shjs
+* cordova\node_modules\shelljs\global.js
+* cordova\node_modules\shelljs\make.js
+* cordova\node_modules\shelljs\package.json
+* cordova\node_modules\shelljs\scripts\
+* cordova\node_modules\shelljs\scripts\generate-docs.js
+* cordova\node_modules\shelljs\scripts\run-tests.js
+* cordova\node_modules\shelljs\shell.js
+* cordova\node_modules\shelljs\src\
+* cordova\node_modules\shelljs\src\cat.js
+* cordova\node_modules\shelljs\src\cd.js
+* cordova\node_modules\shelljs\src\chmod.js
+* cordova\node_modules\shelljs\src\common.js
+* cordova\node_modules\shelljs\src\cp.js
+* cordova\node_modules\shelljs\src\dirs.js
+* cordova\node_modules\shelljs\src\echo.js
+* cordova\node_modules\shelljs\src\error.js
+* cordova\node_modules\shelljs\src\exec.js
+* cordova\node_modules\shelljs\src\find.js
+* cordova\node_modules\shelljs\src\grep.js
+* cordova\node_modules\shelljs\src\ls.js
+* cordova\node_modules\shelljs\src\mkdir.js
+* cordova\node_modules\shelljs\src\mv.js
+* cordova\node_modules\shelljs\src\popd.js
+* cordova\node_modules\shelljs\src\pushd.js
+* cordova\node_modules\shelljs\src\pwd.js
+* cordova\node_modules\shelljs\src\rm.js
+* cordova\node_modules\shelljs\src\sed.js
+* cordova\node_modules\shelljs\src\tempdir.js
+* cordova\node_modules\shelljs\src\test.js
+* cordova\node_modules\shelljs\src\to.js
+* cordova\node_modules\shelljs\src\toEnd.js
+* cordova\node_modules\shelljs\src\which.js
+* cordova\run
+* cordova\run.bat
+* cordova\version
+* cordova\version.bat
+* custom_rules.xml
+* platform_www\
+* platform_www\cordova.js
+* proguard-project.txt
+From testapp-CordovaLib:
+* AndroidManifest.xml
+* build.xml
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In testapp-CordovaLib:
+* src\ => testappCordovaLib\src\main\java\
+In testapp:
+* AndroidManifest.xml => testapp\src\main\AndroidManifest.xml
+* assets\ => testapp\src\main\assets\
+* res\ => testapp\src\main\res\
+* src\ => testapp\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

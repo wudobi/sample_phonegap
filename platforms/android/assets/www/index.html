@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.4.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+    <body>
+        <!-- MAIN PAGE -->
+        <div data-role="page" id="main-page">
+            <!-- panel:user informatino -->
+            <div data-role="panel" id="menu-panel">
+                <p>menu list</p>
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#main-page" data-rel="close">home</a></li>
+                    <li><a href="#login-page">login</a></li>
+                    <li><a href="#phonegap-page">phonegap APIs</a></li>
+                    <li><a href="#chat-page">chat service</a></li>
+                    <li><a href="#about">about</a></li>
+                </ul>
+            </div>
+
+            <div data-role="header">
+                <a href="#menu-panel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">panel</a>
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <p>phonegap API test!!</p>
+            </div>
+
+            <div data-role="footer">
+                <h1>copyright@sungmin</h1>
+            </div>
+
+        </div>
+
+        <!-- LOGIN PAGE -->
+        <div data-role="page" data-dialog="true" id="login-page">
+            <div data-role="header">
+                <h1>this page is login form</h1>
+            </div>
+
+            <div dat-role="main" class="ui-content">
+                <form action="" method="post">
+                    <input type="text" name="user-name" id="user-name" placeholder="input user ID">
+                    <input type="password" name="user-pwd" id="user-pwd" placeholder="input password">
+                    <input type="submit" value="submit">
+                </form>
+
+            </div>
+        </div>
+
+        <!-- PHONEGAP APIS PAGE -->
+        <div data-role="page" id="phonegap-page">
+
+            <!-- panel:user informatino -->
+            <div data-role="panel" id="menu-panel1">
+                <p>menu list</p>
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#main-page">home</a></li>
+                    <li><a href="#login-page">login</a></li>
+                    <li><a href="#phonegap-page" data-rel="close">phonegap APIs</a></li>
+                    <li><a href="#chat-page">chat service</a></li>
+                    <li><a href="#about">about</a></li>
+                </ul>
+            </div>
+
+            <div data-role="header">
+                <a href="#menu-panel1" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">panel</a>
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <form class="ui-filterable">
+                    <input id="my-filter" data-type="search" placeholder="Search Phongap API's Sample">
+                </form>
+                <ul data-role="listview" data-filter="true" data-input="#my-filter" data-inset="true">
+                    <li><a href="#phonegap-device">device</a></li>
+                    <li><a href="#phonegap-geolocation">geolocation</a></li>
+                    <li><a href="#phonegap-notification">notification</a></li>
+                    <li><a href="#">item4</a></li>
+                    <li><a href="#">item5</a></li>
+                </ul>
+            </div>
+
+            <div data-role="footer">
+                <h1>copyright@sungmin</h1>
+            </div>
+        </div>
+
+        <!-- API Device -->
+        <div data-role="page" id="phonegap-device">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" data-inset="inset">
+                    <li id="device1"></li>
+                    <li id="device2"></li>
+                    <li id="device3"></li>
+                    <li id="device4"></li>
+                    <li id="device5"></li>
+                    <li id="device6"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- API Geolocation -->
+        <div data-role="page" id="phonegap-geolocation">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <button id="geolocation1">getCurrentPosition</button>
+            </div>
+        </div>
+
+        <!-- Notification -->
+        <div data-role="page" id="phonegap-notification">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <button id="notification1">alert</button>
+                <button id="notification2">beep</button>
+            </div>
+        </div>
+
+        <!-- chat -->
+        <div data-role="page" id="chat-page">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                welcome
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+        // device API
+        document.addEventListener("deviceready", deviceAPIs, false);
+        function deviceAPIs() {
+            $('#device1').html(device.cordova);
+            $('#device2').html(device.model);
+            $('#device3').html(device.name);
+            $('#device4').html(device.platform);
+            $('#device5').html(device.uuid);
+            $('#device6').html(device.version);
+        }
+
+        // geolocation API
+        $('#geolocation1').on('click', geolocation1);
+        function geolocation1(){
+            var onSuccess = function(position) {
+                alert('Latitude: '          + position.coords.latitude          + '\n' +
+                    'Longitude: '         + position.coords.longitude         + '\n' +
+                    'Altitude: '          + position.coords.altitude          + '\n' +
+                    'Accuracy: '          + position.coords.accuracy          + '\n' +
+                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                    'Heading: '           + position.coords.heading           + '\n' +
+                    'Speed: '             + position.coords.speed             + '\n' +
+                    'Timestamp: '         + position.timestamp                + '\n');
+            };
+            function onError(error) {
+                alert('code: '    + error.code    + '\n' +
+                    'message: ' + error.message + '\n');
+            }
+
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        }
+
+        // notification API
+        $('#notification1').on('click',notification1);
+        $('#notification2').on('click',notification2);
+        function notification1(){
+            function alertDismissed() {
+                alert('default alert');
+            }
+
+            navigator.notification.alert(
+                'hi, this is custom alert',  // message
+                alertDismissed,         // callback
+                'custom alert',            // title
+                '????'                  // buttonName
+            );
+        }
+        function notification2(){
+            navigator.notification.beep(2); // Beep twice!
+        }
+
+        // SocketIO
+        var socket = io('http://220.94.159.138/');
+        if(socket.connected) {
+            socket.emit('userinfo', navigator.userAgent);
+            socket.on('welcome', function(data){
+                $('#chat-page div[data-role="main"]').html('server is open');
+            });
+        } else {
+            $('#chat-page div[data-role="main"]').html('server is closed');
+        }
+        </script>
+    </body>
+</body>
+</html>
