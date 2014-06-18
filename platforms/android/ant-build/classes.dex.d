@@ -7,6 +7,8 @@ C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\com\gnal\
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\com\gnal\testapp\R.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\com\gnal\testapp\testapp.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
+C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\devicemotion\AccelListener$1.class \
+C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\devicemotion\AccelListener.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1$1.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1$2.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$1.class \
@@ -25,4 +27,7 @@ C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apach
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$5$1.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification$5.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\dialogs\Notification.class \
+C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
+C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
+C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\classes\org\apache\cordova\vibration\Vibration.class \
 C:\Users\sungmin\Documents\testapp\platforms\android\ant-build\dexedLibs\classes-f9c772ecf1f92910361082a29afa73e8.jar \

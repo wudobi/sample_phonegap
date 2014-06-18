@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/testapp.iml" filepath="$PROJECT_DIR$/testapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testapp/testapp-testapp.iml" filepath="$PROJECT_DIR$/testapp/testapp-testapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testappCordovaLib/testappCordovaLib.iml" filepath="$PROJECT_DIR$/testappCordovaLib/testappCordovaLib.iml" />
     </modules>
   </component>
 </project>

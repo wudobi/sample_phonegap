@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets" >
+            <file
+                name="www/cordova.js"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\www\cordova.js" />
+            <file
+                name="www/cordova_plugins.js"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\www\cordova_plugins.js" />
+            <file
+                name="www/css/index.css"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\www\css\index.css" />
+            <file
+                name="www/img/logo.png"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\www\img\logo.png" />
+            <file
+                name="www/index.html"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\www\index.html" />
+            <file
+                name="www/js/index.js"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\www\js\index.js" />
+            <file
+                name="_where-is-www.txt"
+                path="C:\Users\sungmin\Documents\testapp\testapp\src\main\assets\_where-is-www.txt" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\sungmin\Documents\testapp\testapp\src\debug\assets" />
+    </dataSet>
+
+</merger>

@@ -4,11 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.0.4.js"></script>
+    <link rel="stylesheet" href="css/jquerymobile.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.js"></script>
+    <script type="text/javascript" src="js/socket.io.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
     <body>
@@ -85,6 +86,11 @@
                     <li><a href="#phonegap-device">device</a></li>
                     <li><a href="#phonegap-geolocation">geolocation</a></li>
                     <li><a href="#phonegap-notification">notification</a></li>
+                    <li><a href="#phonegap-vibration">vibration</a></li>
+                    <li><a href="#phonegap-network">network-information</a></li>
+                    <li><a href="#phonegap-motion">device-motion</a></li>
+                    <li><a href="#">item2</a></li>
+                    <li><a href="#">item3</a></li>
                     <li><a href="#">item4</a></li>
                     <li><a href="#">item5</a></li>
                 </ul>
@@ -124,7 +130,7 @@
             </div>
         </div>
 
-        <!-- Notification -->
+        <!-- API Notification -->
         <div data-role="page" id="phonegap-notification">
             <div data-role="header">
                 <h1>Gnal's Project</h1>
@@ -133,6 +139,47 @@
             <div data-role="main" class="ui-content">
                 <button id="notification1">alert</button>
                 <button id="notification2">beep</button>
+            </div>
+        </div>
+
+        <!-- API Vibration -->
+        <div data-role="page" id="phonegap-vibration">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <button id="vibration1">default</button>
+                <button id="vibration2">cancel</button>
+                <button id="vibration3">pattern</button>
+
+            </div>
+        </div>
+
+        <!-- API Netwrok -->
+        <div data-role="page" id="phonegap-network">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <button id="network1">network info</button>
+                <button id="network2">network conected?</button>
+            </div>
+        </div>
+
+        <!-- MOTION Netwrok -->
+        <div data-role="page" id="phonegap-motion">
+            <div data-role="header">
+                <h1>Gnal's Project</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <button id="motion1">getCurrentAcceleration</button>
+                <button id="motion2">watchAcceleration</button>
+                <hr>
+                <p id="motion2-result">watchAcceleration result</p>
+                <button id="motion3">clearAcceleration</button>
             </div>
         </div>
 
@@ -149,6 +196,8 @@
 
 
         <script type="text/javascript">
+        app.initialize();
+
         // device API
         document.addEventListener("deviceready", deviceAPIs, false);
         function deviceAPIs() {
@@ -194,11 +243,105 @@
                 alertDismissed,         // callback
                 'custom alert',            // title
                 '????'                  // buttonName
-            );
+                );
         }
         function notification2(){
             navigator.notification.beep(2); // Beep twice!
         }
+
+        $('#vibration1').on('click', vibration1);
+        $('#vibration2').on('click', vibration2);
+        $('#vibration3').on('click', vibration3);
+        function vibration1(){
+            navigator.notification.vibrate(3000); //option:duration
+        }
+        function vibration2(){
+            navigator.notification.cancelVibration(); //vibration cancel
+        }
+        function vibration3(){
+            navigator.notification.vibrateWithPattern([
+                0, 100, 100, 200, 100, 400, 100, 800 
+            ]);//vibration pattern : Immediately start > duration 100 > wating 100 > durtaion 200 > wating 100 ...
+        }
+
+        // network-information
+        // 오프라인일떄 팅기는 버그 있음(플러그인 문제)
+        $('#network1').on('click', checkConnection);
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+
+            alert('Connection type: ' + states[networkState]);
+        }
+
+        var is_online = 'this is offline';
+        document.addEventListener("offline", onOffline, false); // offline listener
+        document.addEventListener("online", onOnline, false); // online listener
+
+        function onOffline(){
+            is_online = 'this is offline';
+        }
+        function onOnline(){
+            is_online = 'this is online';
+        }
+        $('#network2').on('click', isOnline);
+        function isOnline(){
+            alert(is_online);
+        }
+
+        // MOTION(Acceleration) API
+        $('#motion1').on('click', motion1);
+        function motion1(){
+            function onSuccess(acceleration) {
+                alert('Acceleration X: ' + acceleration.x + '\n' +
+                  'Acceleration Y: ' + acceleration.y + '\n' +
+                  'Acceleration Z: ' + acceleration.z + '\n' +
+                  'Timestamp: '      + acceleration.timestamp + '\n');
+            };
+
+            function onError() {
+                alert('onError!');
+            };
+
+            navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+        }
+
+        $('#motion2').on('click', motion2);
+        var watchID = 0;
+        function motion2(){
+            function onSuccess(acceleration){ 
+                $('#motion2-result').html(
+                    'watchID: ' + watchID + '\n' +
+                    'Acceleration X: ' + acceleration.x + '\n' +
+                    'Acceleration Y: ' + acceleration.y + '\n' +
+                    'Acceleration Z: ' + acceleration.z + '\n' +
+                    'Timestamp: '      + acceleration.timestamp + '\n');
+            };
+
+            function onError() {
+                alert('onError!');
+            };
+
+            var options = { frequency: 3000 };  // Update every 3 seconds
+
+            watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+        }
+
+        $('#motion3').on('click', motion3);
+        function motion3(){
+            alert('watchID : ' + watchID);
+            navigator.accelerometer.clearWatch(watchID);
+        }
+
 
         // SocketIO
         var socket = io('http://220.94.159.138/');
