@@ -43,7 +43,6 @@ C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\img\logo.png \
 C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\js\index.js \
 C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\js\jquery.js \
 C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\js\jquery.mobile.js \
-C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\js\socket.io.js \
 C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\plugins\org.apache.cordova.device-motion \
 C:\Users\sungmin\Documents\testapp\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \

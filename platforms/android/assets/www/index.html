@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/jquerymobile.css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
-    <script type="text/javascript" src="js/socket.io.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -17,12 +16,11 @@
         <div data-role="page" id="main-page">
             <!-- panel:user informatino -->
             <div data-role="panel" id="menu-panel">
-                <p>menu list</p>
+                <p class="uid">Guest User:D</p>
                 <ul data-role="listview" data-inset="true">
                     <li><a href="#main-page" data-rel="close">home</a></li>
                     <li><a href="#login-page">login</a></li>
                     <li><a href="#phonegap-page">phonegap APIs</a></li>
-                    <li><a href="#chat-page">chat service</a></li>
                     <li><a href="#about">about</a></li>
                 </ul>
             </div>
@@ -52,7 +50,7 @@
                 <form action="" method="post">
                     <input type="text" name="user-name" id="user-name" placeholder="input user ID">
                     <input type="password" name="user-pwd" id="user-pwd" placeholder="input password">
-                    <input type="submit" value="submit">
+                    <input id="logint-submit" type="submit" value="submit">
                 </form>
 
             </div>
@@ -63,12 +61,11 @@
 
             <!-- panel:user informatino -->
             <div data-role="panel" id="menu-panel1">
-                <p>menu list</p>
+                <p class="uid">Guest User:D</p>
                 <ul data-role="listview" data-inset="true">
                     <li><a href="#main-page">home</a></li>
                     <li><a href="#login-page">login</a></li>
                     <li><a href="#phonegap-page" data-rel="close">phonegap APIs</a></li>
-                    <li><a href="#chat-page">chat service</a></li>
                     <li><a href="#about">about</a></li>
                 </ul>
             </div>
@@ -179,6 +176,7 @@
                 <button id="motion2">watchAcceleration</button>
                 <hr>
                 <p id="motion2-result">watchAcceleration result</p>
+                <hr>
                 <button id="motion3">clearAcceleration</button>
             </div>
         </div>
@@ -197,6 +195,44 @@
 
         <script type="text/javascript">
         app.initialize();
+
+        (function login(){
+            var user = {id:'root',pw:'1234'};
+            $('#logint-submit').on('click',function(e){
+                e.preventDefault();
+
+                var $name = $('#user-name').val();
+                var $pwd = $('#user-pwd').val();
+
+                if($name == '' || $pwd == '') {
+                    alert('input id/pw');
+                    return;
+                }
+
+                if($name == user.id && $pwd == user.pw) {
+                    procLogin(user.id);
+                } else {
+                    alert('fail');
+                }
+            });
+        })();
+
+        (function checkLogin(uid){
+            if(uid) procLogin(uid);
+        })(localStorage.getItem('user-id'));
+
+        function procLogin(uid){
+            localStorage.setItem('user-id', uid);
+
+            alert('welcome,'+uid+'!');
+            $('.uid').html('welcome,'+localStorage.getItem('user-id')+'!');
+
+            location.href = location.pathname + '#main-page';
+        }
+
+        function redirect(where){
+            return url = location.href.split('#')[0] + where;
+        }
 
         // device API
         document.addEventListener("deviceready", deviceAPIs, false);
@@ -340,18 +376,6 @@
         function motion3(){
             alert('watchID : ' + watchID);
             navigator.accelerometer.clearWatch(watchID);
-        }
-
-
-        // SocketIO
-        var socket = io('http://220.94.159.138/');
-        if(socket.connected) {
-            socket.emit('userinfo', navigator.userAgent);
-            socket.on('welcome', function(data){
-                $('#chat-page div[data-role="main"]').html('server is open');
-            });
-        } else {
-            $('#chat-page div[data-role="main"]').html('server is closed');
         }
         </script>
     </body>
